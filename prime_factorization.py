@@ -1,4 +1,5 @@
 import math
+import timeit
 
 ##Worst Case should be O(log2(n)) or O(lgn)
 def primeFactorization(n): 
@@ -32,15 +33,19 @@ def commonFactors(m,n):
         
     return ret
     #end of commondFactors(m,n)
-    
-if __name__ == '__main__':
+
+def getInput():
     m = int(input("Welcome to Prime Factorization!\nPlease enter your two numbers.\nNum 1: "))
     n = int(input("Num 2: "))
+    return m, n
+
+def start(m, n):
     m = primeFactorization(m)
     n = primeFactorization(n)
+    ##print(m)
+    ##print(n)
+    ##print("The GCD is:",commonFactors(m,n))
 
-    print(m)
-    print(n)
-
-    print("The GCD is:",commonFactors(m,n))
-    ##primeFactorization(n)
+if __name__ == '__main__':
+    m, n = getInput()
+    print(timeit.timeit('start(m,n)', number=100, globals=globals()))
