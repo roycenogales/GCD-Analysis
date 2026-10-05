@@ -1,4 +1,5 @@
 import math
+import random
 import timeit
 
 ##Worst Case should be O(log2(n)) or O(lgn)
@@ -44,8 +45,10 @@ def start(m, n):
     n = primeFactorization(n)
     ##print(m)
     ##print(n)
-    ##print("The GCD is:",commonFactors(m,n))
+    print("The GCD is:",commonFactors(m,n))
 
 if __name__ == '__main__':
-    m, n = getInput()
-    print(timeit.timeit('start(m,n)', number=100, globals=globals()))
+    ##m, n = getInput()
+    ##m = random.randint(100,200)
+    ##n = random.randint(50,99)
+    print(timeit.timeit('m = random.randint(100,200); n = random.randint(50,99); start(m,n)', number=10, globals=globals()))
