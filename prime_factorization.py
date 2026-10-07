@@ -2,19 +2,24 @@ import math
 import random
 import timeit
 
+intDiv = 0
+
 ##Worst Case should be O(log2(n)) or O(lgn)
-def primeFactorization(n): 
+def primeFactorization(n):
+    global intDiv
     arr = []
     ##adds all multiples of 2 from n into an array
     while n % 2 == 0:
         arr.append(2)
         n //= 2
+        intDiv += 2
     
     ##finds all prime factors from 3 to the the square root of n
     for i in range(3, int(math.sqrt(n))+1, 2):
         while n % i == 0:
             arr.append(i)
             n //= i
+            intDiv += 2
     ##if n is greater than 2, it adds that prime factor to the array
     if n > 2:
         arr.append(n)
@@ -51,4 +56,5 @@ if __name__ == '__main__':
     ##m, n = getInput()
     ##m = random.randint(100,200)
     ##n = random.randint(50,99)
-    print(timeit.timeit('m = random.randint(100,200); n = random.randint(50,99); start(m,n)', number=10, globals=globals()))
+    print(timeit.timeit('m = random.randint(100,200); n = random.randint(50,99); start(m,n)', number=5, globals=globals()))
+    print("Integer Divisions:", intDiv)
