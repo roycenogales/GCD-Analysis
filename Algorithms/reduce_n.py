@@ -3,12 +3,13 @@ import timeit
 
 intDiv = 0
 
-##Best case is O(1), since min(m,n) is also the GCD, while the Worst case is O(min(m,n)-1).
+##Best case is O(1), since min(m,n) is also the GCD, while the Worst case is O(min(m,n)).
 def consecInt(m,n):
     global intDiv
     t = min(m,n)
     ##at most, this while loop runs min(m,n)-1 times
     while t > 0:
+        ##these two if statements are used to check if t is a factor of both m and n.
         if m % t == 0: ## not using 'and' as to track integer divisions
             if n % t == 0:
                 print("GCD is:", t)
