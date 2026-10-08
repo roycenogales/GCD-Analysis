@@ -56,5 +56,7 @@ if __name__ == '__main__':
     ##m, n = getInput()
     ##m = random.randint(100,200)
     ##n = random.randint(50,99)
-    print(timeit.timeit('m = random.randint(100,200); n = random.randint(50,99); start(m,n)', number=5, globals=globals()))
+    print("\nPrime_Factorization")
+    ##keeping this at 10^6
+    print(timeit.timeit('m = random.randint(1000000,2000000); n = random.randint(500000,999999); start(m,n)', number=5, globals=globals()))
     print("Integer Divisions:", intDiv)

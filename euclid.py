@@ -23,5 +23,7 @@ def start(m,n):
 
 if __name__ == '__main__':
     ##m, n = getInput()
-    print(timeit.timeit('m = random.randint(100,200); n = random.randint(50,99); start(m,n)', number=10, globals=globals()))
+    print("Euclid")
+    ##keeping this at 10^6
+    print(timeit.timeit('m = random.randint(1000000,2000000); n = random.randint(500000,999999); start(m,n)', number=5, globals=globals()))
     print("Integer Divisions:", intDiv)
