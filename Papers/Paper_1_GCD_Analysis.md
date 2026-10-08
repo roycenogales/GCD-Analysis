@@ -34,7 +34,7 @@ def euclid(m,n):
     intDiv += 1
     ##recursively calls euclid to use find GCD of m and n.
     return euclid(n, m%n)
-```
+```  
 
       2. The best case for this algorithm is O(1), this is because n could be the common divisor; therefore, on the next recursive call, the GCD will be found, taking constant time. The worst case for Euclid’s algorithm is O(log2m) because each time the m%n is taken, the result is at most be m/2-1, resulting is a minimum division of 2 each time, or log2m. This also assumes that m is the larger of the two numbers.
 
@@ -60,7 +60,7 @@ def consecInt(m,n):
         else:
             intDiv += 1
             t -= 1
-```
+```  
 
       2. The best case is O(1), as min(m,n) could be the GCD of the two numbers. The worst case is O(min(m,n)), as the GCD of m and n could be 1, taking min(m,n) amount of time.
 
@@ -88,7 +88,7 @@ def primeFactorization(n):
     if n > 2:
         arr.append(n)
     return arr
-```
+```  
 
       2. The second part of the algorithm requires comparing the arrays of m and n for common integers. This is done by using nested loops of length lgm and lgn, as that is how many integers are in the arrays of m and n. It compares the ith element of m to the jth element of n; if there is a match, the element is removed from n and i is incremented. The removed element is multiplied to an integer ret, which has an initial value of 1\. At the end of this function, the value ret is returned. The time of this algorithm is O(lgm\*lgn), as it has a loop m and a nested loop n of lengths lgm and lgn respectively.
 
@@ -104,7 +104,7 @@ def commonFactors(m,n):
             j += 1
 
     return ret
-```
+```  
 
       3. Overall, this algorithm would take a time of lgn+lgm+(lgm\*lgn), which ultimately reduces down to O(lgm\*lgn).
 
