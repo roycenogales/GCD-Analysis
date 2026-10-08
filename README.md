@@ -17,7 +17,6 @@ Within each Python file, there are values that can be altered to get similar eff
 
 Within this line:  
 
-```print(timeit.timeit('m = random.randint(1000000,2000000); n = random.ra\
-ndint(500000,999999); start(m,n)', number=5, globals=globals()))```  
+```print(timeit.timeit('m = random.randint(1000000,2000000); n = random.randint(500000,999999); start(m,n)', number=5, globals=globals()))```  
 
 Modify these values by powers of 10 to get similar results.  
